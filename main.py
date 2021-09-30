@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, send_file
 import pandas as pd
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 app = Flask(__name__)
-app.secret_key = "mysecretkey"
+app.secret_key = os.getenv("SECRET_KEY")
 
 
 def modify_ref(name):
