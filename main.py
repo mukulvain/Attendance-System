@@ -55,9 +55,12 @@ def mark_attendance():
             if row.empty:
                 didProxy.append(["NOT IN BATCH", g_name, ref_name])
                 continue
-            df.loc[df["Name"] == g_name, "Attendance"] = 0
             roll = df.loc[df["Name"] == g_name, "RollNo."].to_string(index=False)
             didProxy.append([roll, g_name, ref_name])
+    
+    for entry in didProxy:
+        if entry[0]!= "NOT IN BATCH":
+            df.loc[df["Name"] == entry[1], "Attendance"] = 0
 
     absent = (
         df.loc[df["Attendance"] == 0, ["RollNo.", "Name"]]
