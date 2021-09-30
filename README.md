@@ -1,5 +1,5 @@
 # Attendance-System
-This project allows a faculty a get the names of absent students and those who have marked proxy.
+This project allows a faculty to get the names of absent students and those who have marked proxy.
 The faculty needs to provide an attendance.txt file which the faculty may copy from the Chat Box of Google Meet, and a reference.csv file that the faculty can collect from the Admin office.
 
 ### Observations
